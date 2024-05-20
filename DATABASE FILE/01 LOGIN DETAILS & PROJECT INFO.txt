@@ -1,16 +1,21 @@
-**Log on to codeastro.com for more projects!***
+**Visit my github profile for more projects***
 
-**Database Name: inventorymgcsharp**
+**Database Name: IMS**
 
-**Developed by Sudesh Fernandez**
+**Developed by Aliyan Ahmed**
 
 
 **Admin Login Details**
 
 Username: admin
-Password: password123
+Password: admin123
 
 **Manager Login Details**
 
 Username: manager
 Password: manager123
+
+**cashier Login Details**
+
+Username: counter
+Password: counter123
