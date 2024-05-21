@@ -36,7 +36,7 @@ namespace InventorySystemCsharp
             {
 
 
-                SqlConnection myConn = new SqlConnection(@"data source=(local);initial catalog=IMS;user id=sa;password=Indigo@123;");
+                string connectionString = ConfigurationManager.ConnectionStrings["ConStr"].ConnectionString;SqlConnection myConn = new SqlConnection(connectionString);
 
                 if(bunifuMetroTextbox1.Text != "" && bunifuMetroTextbox2.Text != "")
                 {

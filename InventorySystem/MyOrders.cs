@@ -30,7 +30,7 @@ namespace InventorySystemCsharp
         {
             try
             {
-                SqlConnection myConn = new SqlConnection(@"data source=(local);initial catalog=IMS;user id=sa;password=Indigo@123;");
+                string connectionString = ConfigurationManager.ConnectionStrings["ConStr"].ConnectionString;SqlConnection myConn = new SqlConnection(connectionString);
                 //string query = "SELECT id,details,price,paid FROM `orders` where user ='"+label9.Text+"'"
                 string query = "SELECT id, details, price, isPaid   FROM orders where isDeleted = 0 AND [user] = '" + label9.Text + "'";
                 SqlDataAdapter sda = new SqlDataAdapter(query , myConn);
@@ -64,7 +64,7 @@ namespace InventorySystemCsharp
             {
                 String id = dataGridView1.CurrentRow.Cells[0].Value.ToString();
 
-                SqlConnection myConn = new SqlConnection(@"data source=(local);initial catalog=IMS;user id=sa;password=Indigo@123;");
+                string connectionString = ConfigurationManager.ConnectionStrings["ConStr"].ConnectionString;SqlConnection myConn = new SqlConnection(connectionString);
                 string query = "update orders set isDeleted=1 where id = "+id;
                 SqlCommand cmd = new SqlCommand(query, myConn);
                 myConn.Open();

@@ -1,14 +1,19 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.IO.Compression;
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace InventorySystemCsharp
 {  
@@ -44,7 +49,7 @@ namespace InventorySystemCsharp
             {
                 userdetail user = new userdetail();
 
-                SqlConnection myConn = new SqlConnection(@"data source=(local);initial catalog=IMS;user id=sa;password=Indigo@123;");
+                string connectionString = ConfigurationManager.ConnectionStrings["ConStr"].ConnectionString;SqlConnection myConn = new SqlConnection(connectionString);
                 //string query = "INSERT INTO `orders`(`user`,`details`,`price`) VALUES('"+user.getUname()+"','"+MyParent.ItemList+"',"+MyParent.TotalPrice+");"+MyParent.UpdateQuery+"";
                 string query = "INSERT INTO orders ([user], details, price, isDeleted, isPaid) VALUES ('" + user.getUname() +"', '"+ Convert.ToString(MyParent.ItemList) + "', " + Convert.ToInt32(MyParent.TotalPrice) + ", 0, 0);" + MyParent.UpdateQuery+"";
                 SqlCommand cmd = new SqlCommand(query, myConn);

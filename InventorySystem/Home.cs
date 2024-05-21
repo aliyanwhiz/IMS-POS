@@ -40,7 +40,7 @@ namespace InventorySystemCsharp
         {
             try
             {
-                SqlConnection myConn = new SqlConnection(@"data source=(local);initial catalog=IMS;user id=sa;password=Indigo@123;");
+                string connectionString = ConfigurationManager.ConnectionStrings["ConStr"].ConnectionString;SqlConnection myConn = new SqlConnection(connectionString);
                 String query = "select * from Products where model='" + comboBox1.Text + "' AND part='" + comboBox2.Text + "'";
                 SqlDataAdapter sda = new SqlDataAdapter(query, myConn);
                 DataTable dt = new DataTable();
@@ -57,7 +57,7 @@ namespace InventorySystemCsharp
 
         void FillComboBox()
         {
-            SqlConnection myConn = new SqlConnection(@"data source=(local);initial catalog=IMS;user id=sa;password=Indigo@123;");
+            string connectionString = ConfigurationManager.ConnectionStrings["ConStr"].ConnectionString;SqlConnection myConn = new SqlConnection(connectionString);
             SqlDataAdapter sda = new SqlDataAdapter("select DISTINCT model from Products where isDeleted = 0", myConn);
             DataSet dt = new DataSet();
             sda.Fill(dt);

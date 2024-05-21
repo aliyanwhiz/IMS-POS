@@ -27,7 +27,7 @@ namespace InventorySystemCsharp
         void Filluserlist()
         {
             //MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
-            SqlConnection myConn = new SqlConnection(@"data source=(local);initial catalog=IMS;user id=sa;password=Indigo@123;");
+            string connectionString = ConfigurationManager.ConnectionStrings["ConStr"].ConnectionString;SqlConnection myConn = new SqlConnection(connectionString);
             SqlDataAdapter list = new SqlDataAdapter("select first,last,username,phone,usertype from users ", myConn);
             DataTable dtlist = new DataTable();
             list.Fill(dtlist);
