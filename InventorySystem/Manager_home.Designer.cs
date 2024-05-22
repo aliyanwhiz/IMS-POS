@@ -160,10 +160,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuTransition1.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
-            this.label1.Font = new System.Drawing.Font("Bowlby One SC", 28F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F);
             this.label1.Location = new System.Drawing.Point(407, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(542, 59);
+            this.label1.Size = new System.Drawing.Size(409, 44);
             this.label1.TabIndex = 2;
             this.label1.Text = "Inventory Management";
             // 
@@ -1585,10 +1585,10 @@
             this.label34.BackColor = System.Drawing.Color.Transparent;
             this.bunifuTransition1.SetDecoration(this.label34, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.label34, BunifuAnimatorNS.DecorationType.None);
-            this.label34.Font = new System.Drawing.Font("Bowlby One SC", 28F);
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F);
             this.label34.Location = new System.Drawing.Point(601, 68);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(183, 59);
+            this.label34.Size = new System.Drawing.Size(148, 44);
             this.label34.TabIndex = 66;
             this.label34.Text = "System";
             // 
@@ -1651,6 +1651,7 @@
             this.bunifuTransition1.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Manager_home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
